@@ -3,6 +3,7 @@ package edu.kis.powp.jobs2d.events;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import edu.kis.powp.jobs2d.commands.ComplexCommand;
 import edu.kis.powp.jobs2d.commands.OperateToCommand;
 import edu.kis.powp.jobs2d.commands.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.DriverCommand;
@@ -30,7 +31,7 @@ public class SelectTestFigureOptionListener implements ActionListener {
 		else if(e.getActionCommand().equals("Figure Jane")) {
 			FiguresJane.figureScript(new Job2dDrawerAbstractAdapter(driverManager.getCurrentDriver()));
 		}
-		else if(e.getActionCommand().equals("Figure Sebastian")) {
+		else if(e.getActionCommand().equals("Figure Sebastian 1")) {
 			DriverCommand driverCommandSet1 = new SetPositionCommand(0, 0);
 			DriverCommand driverCommandOperate1 = new OperateToCommand(0, 100);
 			DriverCommand driverCommandOperate2 = new OperateToCommand(100, 50);
@@ -40,6 +41,41 @@ public class SelectTestFigureOptionListener implements ActionListener {
 			driverCommandOperate1.execute(driverManager.getCurrentDriver());
 			driverCommandOperate2.execute(driverManager.getCurrentDriver());
 			driverCommandOperate3.execute(driverManager.getCurrentDriver());
+		}
+		else if(e.getActionCommand().equals("Figure Sebastian 2")) {
+			ComplexCommand complexCommand = new ComplexCommand();
+			complexCommand.addCommand(new SetPositionCommand(0, 0));
+			complexCommand.addCommand(new OperateToCommand(0, 200));
+			complexCommand.addCommand(new OperateToCommand(100, 200));
+			complexCommand.addCommand(new OperateToCommand(100, 0));
+			complexCommand.addCommand(new OperateToCommand(0, 0));
+
+			complexCommand.execute(driverManager.getCurrentDriver());
+		}
+		else if(e.getActionCommand().equals("Figure Sebastian 3")) {
+			ComplexCommand complexCommand = new ComplexCommand();
+			complexCommand.addCommand(new SetPositionCommand(-100, 0));
+			complexCommand.addCommand(new OperateToCommand(0, -100));
+			complexCommand.addCommand(new OperateToCommand(100, 0));
+			complexCommand.addCommand(new OperateToCommand(0, 100));
+			complexCommand.addCommand(new OperateToCommand(-100, 0));
+
+			complexCommand.execute(driverManager.getCurrentDriver());
+		}
+
+		else if(e.getActionCommand().equals("Figure Sebastian 4")) {
+			ComplexCommand complexCommand = new ComplexCommand();
+			complexCommand.addCommand(new SetPositionCommand(-100, 50));
+			complexCommand.addCommand(new OperateToCommand(-100, -50));
+			complexCommand.addCommand(new OperateToCommand(-50, -100));
+			complexCommand.addCommand(new OperateToCommand(50, -100));
+			complexCommand.addCommand(new OperateToCommand(100, -50));
+			complexCommand.addCommand(new OperateToCommand(100, 50));
+			complexCommand.addCommand(new OperateToCommand(50, 100));
+			complexCommand.addCommand(new OperateToCommand(-50, 100));
+			complexCommand.addCommand(new OperateToCommand(-100, 50));
+
+			complexCommand.execute(driverManager.getCurrentDriver());
 		}
 	}
 }

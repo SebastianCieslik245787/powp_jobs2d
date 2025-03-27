@@ -31,7 +31,10 @@ public class TestJobs2dPatterns {
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
 		application.addTest("Figure Jane", selectTestFigureOptionListener);
-		application.addTest("Figure Sebastian", selectTestFigureOptionListener);
+		application.addTest("Figure Sebastian 1", selectTestFigureOptionListener);
+		application.addTest("Figure Sebastian 2", selectTestFigureOptionListener);
+		application.addTest("Figure Sebastian 3", selectTestFigureOptionListener);
+		application.addTest("Figure Sebastian 4", selectTestFigureOptionListener);
 	}
 
 	/**
